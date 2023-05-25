@@ -5,3 +5,24 @@ services:
   appserver:
     # --- node service ---
     type: 'node:18'
+    scanner: false
+    # --- Build steps ---
+    build_as_root:
+      # Use python3 as default python.
+      - cd /usr/bin && unlink python && ln -s /usr/bin/python3 python
+    build:
+      - echo "Build steps ..."
+      # Force use of bash shell, otherwise we get /bin/sh (why?).
+      - cmd="yarn global add heroku"
+
+tooling:
+  heroku:
+    service: appserver
+    description: "Run heroku CLI"
+  node:
+    service: appserver
+  npm:
+    service: appserver
+    cmd: echo "Use yarn rather than npm."
+  yarn:
+    service: appserver
