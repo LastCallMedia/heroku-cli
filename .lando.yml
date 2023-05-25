@@ -1,0 +1,7 @@
+name: heroku
+recipe: mean
+
+services:
+  appserver:
+    # --- node service ---
+    type: 'node:18'
