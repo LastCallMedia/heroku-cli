@@ -7,14 +7,12 @@ services:
     scanner: false
     # --- Build steps ---
     build_as_root:
-      - echo "Build as root steps ..."
-      - apt update
-      - apt install -y cmake
+      - echo "Build as root steps..."
+      - apt-get update && apt-get install -y cmake
       - echo "Build as root steps done."
     build:
-      - echo "Build steps ..."
+      - echo "Build steps..."
       # Install Heroku CLI
-      - echo "Installing packages ..."
       - yarn global add heroku
       - echo "Build steps done."
 
