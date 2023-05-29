@@ -103,3 +103,6 @@ TAGS
 
 ## apps subdirectory
 apps/*
+
+## lando
+.lando.local.yml
