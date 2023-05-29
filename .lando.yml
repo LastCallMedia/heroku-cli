@@ -1,5 +1,4 @@
 name: heroku
-recipe: mean
 
 services:
   appserver:
@@ -8,21 +7,27 @@ services:
     scanner: false
     # --- Build steps ---
     build_as_root:
-      # Use python3 as default python.
-      - cd /usr/bin && unlink python && ln -s /usr/bin/python3 python
+      - echo "Build as root steps ..."
+      - apt update
+      - apt install -y cmake
+      - echo "Build as root steps done."
     build:
       - echo "Build steps ..."
-      # Force use of bash shell, otherwise we get /bin/sh (why?).
-      - cmd="yarn global add heroku"
+      # Install Heroku CLI
+      - echo "Installing packages ..."
+      - yarn global add heroku
+      - echo "Build steps done."
 
 tooling:
   heroku:
     service: appserver
-    description: "Run heroku CLI"
+    description: "Run heroku CLI commands"
   node:
     service: appserver
-  npm:
-    service: appserver
-    cmd: echo "Use yarn rather than npm."
+    description: "Run node commands"
   yarn:
     service: appserver
+    description: "Run yarn commands"
+  npm:
+    service: appserver
+    cmd: echo && echo "Please Use yarn rather than npm."
