@@ -7,9 +7,10 @@
 
 ### Logging in to Heroku
 
-Use command: `lando heroku -i`
-
-Enter the API key for your Heroku user account as the password, available at [https://dashboard.heroku.com/account](https://dashboard.heroku.com/account)
+* For browser-based login, use command: `lando heroku login` and open the URL given in your browser.
+* For intereactive login, use command: `lando heroku:login` or `lando heroku login -i`.
+    * Enter the API key as the login password.
+    * Get your API key at [https://dashboard.heroku.com/account](https://dashboard.heroku.com/account)
 
 ### Choosing a different Node.js version.
 

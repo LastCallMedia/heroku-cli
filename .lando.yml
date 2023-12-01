@@ -1,31 +1,32 @@
 name: heroku
 
 services:
-  appserver:
+  node:
     # --- node service ---
     type: 'node:18'
     scanner: false
     # --- Build steps ---
-    build_as_root:
-      - echo "Build as root steps..."
-      - apt-get update && apt-get install -y cmake
-      - echo "Build as root steps done."
     build:
       - echo "Build steps..."
       # Install Heroku CLI
-      - yarn global add heroku
+      - npm install -g heroku
       - echo "Build steps done."
 
 tooling:
   heroku:
-    service: appserver
+    service: node
     description: "Run heroku CLI commands"
   node:
-    service: appserver
+    service: node
     description: "Run node commands"
   yarn:
-    service: appserver
+    service: node
     description: "Run yarn commands"
   npm:
-    service: appserver
-    cmd: echo && echo "Please Use yarn rather than npm."
+    service: node
+    description: "Run npm commands"
+  heroku:login:
+    service: node
+    description: "Interactive login to Heroku"
+    cmd:
+      - heroku login -i
