@@ -30,3 +30,8 @@ tooling:
     description: "Interactive login to Heroku"
     cmd:
       - heroku login -i
+  heroku:push:
+    service: node
+    description: "Push branch 'main' to Heroku"
+    cmd:
+      - git push heroku main
