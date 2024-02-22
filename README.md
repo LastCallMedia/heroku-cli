@@ -13,6 +13,19 @@
     * Enter the API key as the login password.
     * Get your API key at [https://dashboard.heroku.com/account](https://dashboard.heroku.com/account)
 
+### Running Heroku CLI commands
+
+Method #1: just prefix the command with `lando`.
+Examples:
+* `lando heroku help`
+* `lando heroku apps`
+
+Method #2: drop into a shell and from there run the Heroku CLI commands directly.
+
+Run `lando ssh`  
+then:
+  `heroku help` or `heroku apps`, etc.
+
 ### Choosing a different Node.js version.
 
 In the `.lando.yml` file, you can change `node:18` to some other version number.
