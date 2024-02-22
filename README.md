@@ -2,7 +2,7 @@
 
 ### Getting started
 
-* Install [Lando](https://lando.dev/) if you dodn't already have it: https://lando.dev/download/
+* Install [Lando](https://lando.dev/) if you don't already have it: https://lando.dev/download/
 * Clone the repository
 * Run `lando start`
 
