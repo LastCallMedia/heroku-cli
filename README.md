@@ -1,4 +1,5 @@
 ## Provides the [Heroku CLI](https://devcenter.heroku.com/categories/command-line) environment as a Lando app
+Heroku CLI is brought to you by your friends at [Last Call Media](https://www.lastcallmedia.com).
 
 ### Getting started
 
